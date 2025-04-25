@@ -1,9 +1,7 @@
-
-
 MAKING A GENERIC FORM
 
 1. In components folder, create a file name Form.jsx and insert this code:
-
+``` javascript
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
@@ -65,12 +63,12 @@ function Form({ route, method }) {
 }
 
 export default Form
-
-
+```
 
 ADDING FORM STYLES
 
 1.Go to styles folder and create new file named Form.css and insert this code:
+``` javascript
 
 .form-container {
   display: flex;
@@ -108,10 +106,11 @@ ADDING FORM STYLES
 .form-button:hover {
   background-color: #0056b3;
 }
+```
 
 CONNECTING THE LOGIN/REGISTER FORM
-
 1. Go to Register.jsx under pages folder and insert this code:
+```javascript
 
 import Form from "../components/Form"
 
@@ -120,10 +119,11 @@ function Register() {
 }
 
 export default Register
-
+```
 
 
 2. Go to Login.jsx under pages folder and insert this code: 
+```javascript
 
 import Form from "../components/Form"
 
@@ -132,6 +132,7 @@ function Login() {
 }
 
 export default Login
+```
 
 3. Go to terminal and type npm run dev and it will show the local host 
 
@@ -145,7 +146,8 @@ export default Login
 
 BUILDING THE HOME PAGE
 
-1. Go to Home.jsx then inser this code
+1. Go to Home.jsx then inser this code:
+``` javascript
 
 import { useState, useEffect } from "react";
 import api from "../api";
@@ -239,8 +241,10 @@ getNotes();
 }
 
 export default Home;
+```
 
 2. Go to backend folder, then to api folder then click the urls.py,
+```javascript
 
 from django.urls import path
 from . import views
@@ -249,15 +253,12 @@ urlpatterns = [
     path("notes/", views.NoteListCreate.as_view(), name="note-list"),
     path("notes/delete/<int:pk>/", views.NoteDelete.as_view(), name="delete-note"),
 ]
-
-
-
-
+```
 
 BUILDING THE COMPONENTS
 
 1. Go to components folder, then create a file name Note.jsx then insert this code:
-
+```javascript
 import React from "react";
 import "../styles/Note.css"
 
@@ -277,13 +278,13 @@ function Note({ note, onDelete }) {
 }
 
 export default Note
-
+```
 
 
 FINISHING FRONTEND TOUCHES
 
 1. Go to Styles folder then create new file name Note.css then insert this code: 
-
+```javascript
 .note-container {
   padding: 10px;
   margin: 20px 0;
@@ -318,9 +319,11 @@ FINISHING FRONTEND TOUCHES
   background-color: #d32f2f; /* Darker red */
 }
 
-
+```
 
 2. Create Home.css then insert this code
+
+```javscript
 
 /* Container for the whole page */
 div {
@@ -391,9 +394,11 @@ form input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-
+```
 
 1. Create another file name LoadingIndicator.css and insert this code
+
+```javascript
 
 import
 
@@ -510,9 +515,10 @@ function Home() {
 }
 
 export default Home;
+```
 
 5. Then, open components folder and select Note.jsx then insert this code
-
+```jaavscript
 import React from "react";
 import "../styles/Note.css"
 
@@ -532,9 +538,10 @@ function Note({ note, onDelete }) {
 }
 
 export default Note
+```
 
 6. Inside components, create file name LoadingIndicator.jsx and insert this code
-
+```javascript
 import "../styles/LoadingIndicator.css"
 
 const LoadingIndicator = () => {
@@ -544,9 +551,11 @@ const LoadingIndicator = () => {
 }
 
 export default LoadingIndicator
+```
 
 7. Go to Components folder then select Form.jsx then insert this code:
 
+```javascript
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
@@ -608,3 +617,4 @@ function Form({ route, method }) {
 }
 
 export default Form
+```
